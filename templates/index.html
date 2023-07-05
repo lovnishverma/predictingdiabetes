@@ -1,8 +1,42 @@
 <html>
   <head>
-    <body>
-      
-      <form
-    </body>
+    <title>predction page</title>
+    <p><em>WELCOME TO THE PREDICT PAGE</em></P>
+    <div align="center" class="main">
+        <h1>PREDICTING DIABETES USING LEARNING</h1> <br />
+        <form action="result">
+            <table>
+                <tr>
+                    <td align="right"> <strong>Age:</strong> </td>
+                    <td align="left"><input type="text" name="n1"></td>
+                </tr>
+                <tr>
+                    <td align="right"> <strong>HyperTension:</strong> </td>
+                    <td align="left"><input type="text" name="n2"></td>
+                </tr>
+                <tr>
+                    <td align="right"> <strong>Heart-Disease:</strong> </td>
+                    <td align="left"><input type="text" name="n3"></td>
+                </tr>
+                <tr>
+                    <td align="right"> <strong>Bmi:</strong> </td>
+                    <td align="left"><input type="text" name="n4"></td>
+                </tr>
+                <tr>
+                    <td align="right"> <strong>HbA1c_level:</strong> </td>
+                    <td align="left"><input type="text" name="n5"></td>
+                </tr>
+                <tr>
+                    <td align="right"> <strong>Blood_Glucose_Level:</strong> </td>
+                    <td align="left"><input type="text" name="n6"></td>
+                </tr>
+            </table>
+            <input type="submit" value="PREDICT">
+        </form>
+        <div class="row">
+            <h2><em>{{result2}}</em></h2>
+        </div>
+    </div>
+</body>
   </head>
 </html>
