@@ -11,10 +11,16 @@ def diabetes():
 
 @app.route('/diabetes',methods=["post"])
 def page():
-  age=eval(request.form.get("age"))
-  hypertension=eval(request.form.get("hypertension"))
-  heartdisease=eval(request.form.get("heartdisease"))
-  bmi=eval(request.form.get("bmi"))
-  hbaic_level=eval(request.form.get("hbaic_level"))
-  blood_glucose-level=eval(request.form.get("blood_glucose_level"))
+  Age=eval(request.form.get("Age"))
+  HyperTension=eval(request.form.get("HyperTension"))
+  Heart-Disease=eval(request.form.get("Heart-Disease"))
+  Bmi=eval(request.form.get("Bmi"))
+  HbA1c_level=eval(request.form.get("HbA1c_level"))
+  Blood_Glucose_Level=eval(request.form.get("Blood_Glucose_Level"))
   
+  url="https://raw.githubusercontent.com/Anmolpreet001/dataset/main/diabetes_prediction_dataset.csv"
+  data=pd.read_csv(url,header=None)
+  flower=data.values
+  
+  # split the values into input and output
+  x=flower[:,7]
