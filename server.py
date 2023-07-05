@@ -13,6 +13,8 @@ def diabetes():
 def page():
   age=eval(request.form.get("age"))
   hypertension=eval(request.form.get("hypertension"))
-  heartdisease=eval(request.form.get("heart"))
-  pheight=eval(request.form.get("pheight"))
+  heartdisease=eval(request.form.get("heartdisease"))
+  bmi=eval(request.form.get("bmi"))
+  hbaic_level=eval(request.form.get("hbaic_level"))
+  blood_glucose-level=eval(request.form.get("blood_glucose_level"))
   
