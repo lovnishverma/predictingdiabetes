@@ -24,3 +24,15 @@ def page():
   
   # split the values into input and output
   x=flower[:,7]
+  y=flower[:,7]
+  
+  model=LogisticRegression()
+  model.fit(x,y)
+  
+  arr=model.predict([[Age,HyperTension, Heart-Disease,Bmi,HbA1c_level,  Blood_Glucose_Level]])
+  
+  
+  return render_template("index.html", data=str(arr[0]))
+
+if __name__ == '__main__':
+  app.run()
