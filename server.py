@@ -6,11 +6,7 @@ from sklearn.linear_model import LogisticRegression
 
 app=Flask(__name__)
 
-@app.route('/')
-def iris():
-  return render_template("index.html")
-
-@app.route('/irisf', methods=["POST"])
+@app.route('/', methods=["POST","GET"])
 def page():
   swidth=eval(request.form.get("n1"))
   sheight=eval(request.form.get("n2"))
@@ -33,7 +29,7 @@ def page():
   
   arr=model.predict([[swidth,sheight,pwidth,pheight,height,hght]])
 
-  return render_template("index.html", data=str(0))
+  return render_template("index.html", data=str(arr[0]))
 
 
 if __name__ == '__main__':
