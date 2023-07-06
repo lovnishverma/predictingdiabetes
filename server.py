@@ -40,7 +40,10 @@ def diabetesprediction():
   
   arr=model.predict([[Age,HyperTension, Heart-Disease,Bmi,HbA1c_level,  Blood_Glucose_Level]])
   result=arr[0]
-  return 
+  return "diabetes prediction: "+str(result)
+
+
+  
   
   return render_template("index.html", result2=str(arr[0]))
 
