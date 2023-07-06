@@ -1,57 +1,59 @@
 <html>
-  <head>
+<head>
     <style>
-      body {
-        background-image: url("https://cdn.glitch.global/3f77f752-07bc-49c4-a0de-c1f152ea05c5/JPML03-Diabetes-Prediction-using-Machine-Learning.jpg?v=1688579070737");
-        background-size: 100% 100%;
-      }
+        body {
+            background-image: url("https://cdn.glitch.global/3f77f752-07bc-49c4-a0de-c1f152ea05c5/JPML03-Diabetes-Prediction-using-Machine-Learning.jpg?v=1688579070737");
+            background-size: 100% 100%;
+        }
     </style>
+</head>
 
-    <body>
-      <title>prediction page</title>
-      <div align="center" class="main">
-        <h1>PREDICTING DIABETES USING LEARNING</h1>
+<body>
+    <div align="center" class="main">
+        <h1>PREDICTING DIABETES USING MACHINE LEARNING</h1>
         <br />
         <form action="/" method="POST">
-          <table>
-            <tr>
-              <td align="right"><strong>Age:</strong></td>
-              <td align="left"><input type="text" name="n1" /></td>
-            </tr>
-            <tr>
-              <td align="right"><strong>HyperTension:</strong></td>
-              <td align="left"><input type="text" name="n2" /></td>
-            </tr>
-            <tr>
-              <td align="right"><strong>Heart-Disease:</strong></td>
-              <td align="left"><input type="text" name="n3" /></td>
-            </tr>
-            <tr>
-              <td align="right"><strong>Bmi:</strong></td>
-              <td align="left"><input type="text" name="n4" /></td>
-            </tr>
-            <tr>
-              <td align="right"><strong>HbA1c_level:</strong></td>
-              <td align="left"><input type="text" name="n5" /></td>
-            </tr>
-            <tr>
-              <td align="right"><strong>Blood_Glucose_Level:</strong></td>
-              <td align="left"><input type="text" name="n6" /></td>
-            </tr>
-          </table>
-          <input type="submit" value="PREDICT" />
+            <table>
+                <tr>
+                    <td align="right"><strong>Age:</strong></td>
+                    <td align="left"><input type="text" name="age" required /></td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>Hypertension:</strong></td>
+                    <td align="left"><input type="text" name="hypertension" required /></td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>Heart Disease:</strong></td>
+                    <td align="left"><input type="text" name="heart_disease" required /></td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>BMI:</strong></td>
+                    <td align="left"><input type="text" name="bmi" required /></td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>HbA1c Level:</strong></td>
+                    <td align="left"><input type="text" name="HbA1c_level" required /></td>
+                </tr>
+                <tr>
+                    <td align="right"><strong>Blood Glucose Level:</strong></td>
+                    <td align="left"><input type="text" name="blood_glucose_level" required /></td>
+                </tr>
+            </table>
+            <input type="submit" value="PREDICT" />
         </form>
-         <div> Result: </div>
-     <div align="center"> {{data}} </div>
-     <center>
-     {% if data=="yes" %}
-        <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20Setosa.png?v=1680866840563" alt="IRIS SETOSA" width="200" height="200">
-
-     {% elif data=="no" %}
-        <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20Virginica.png?v=1680866857022" alt="IRIS VIRGINICA" width="200" height="200">
-     {% endif %}
-     </center>
-      </div>
-    </body>
-  </head>
+        <br>
+        <div> Result: </div>
+        <div align="center"> {{data}} </div>
+        <br>
+        {% if data == "yes" %}
+        <h1>
+          You have Diabetes
+        </h1>
+        {% elif data == "no" %}
+        <h1>
+          You Don't have Diabetes
+        </h1>
+        {% endif %}
+    </div>
+</body>
 </html>
