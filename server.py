@@ -18,7 +18,7 @@ def page():
   HbA1c_level=eval(request.form.get("n5"))
   Blood_Glucose_Level=eval(request.form.get("n6"))
   
-  url=""
+  url="dia.csv"
   data=pd.read_csv(url,header=None)
   flower=data.values
   
@@ -32,7 +32,7 @@ def page():
   arr=model.predict([[Age,HyperTension, Heart-Disease,Bmi,HbA1c_level,  Blood_Glucose_Level]])
   
   
-  return render_template("index.html", data=str(arr[0]))
+  return render_template("index.html", result2=str(arr[0]))
 
 if __name__ == '__main__':
   app.run()
