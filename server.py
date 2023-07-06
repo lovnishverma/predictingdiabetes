@@ -1,4 +1,4 @@
-from falsk import*
+from flask import *
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
@@ -7,12 +7,12 @@ app=Flask(__name__)
 
 @app.route('/',methods=["POST"])
 def diabetesprediction():
-  Age=eval(request.form.get("Age"))
-  HyperTension=eval(request.form.get("HyperTension"))
-  Heart-Disease=eval(request.form.get(" Heart-Diseas"))
-  Bmi=eval(request.form.get("Bmi"))
-  HbA1c_level=eval(request.form.get("  HbA1c_level"))
-  Blood_Glucose_Level=eval(request.form.get("Blood_Glucose_Level"))
+  Age=eval(request.form.get("n1"))
+  HyperTension=eval(request.form.get("n2"))
+  HeartDisease=eval(request.form.get("n3"))
+  Bmi=eval(request.form.get("n4"))
+  HbA1clevel=eval(request.form.get("n5"))
+  BloodGlucoseLevel=eval(request.form.get("n6"))
   
   url="dia.csv"
   data=pd.read_csv(url,header=None)
@@ -25,7 +25,7 @@ def diabetesprediction():
   model=LogisticRegression()
   model.fit(x,y)
   
-  arr=model.predict([[Age,HyperTension, Heart-Disease,Bmi,HbA1c_level,  Blood_Glucose_Level]])
+  arr=model.predict([[Age,HyperTension, HeartDisease,Bmi,HbA1clevel,BloodGlucoseLevel]])
   result=arr[0]
   return "diabetes prediction: "+str(result)
 
