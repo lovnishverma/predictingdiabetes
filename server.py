@@ -5,20 +5,7 @@ from sklearn.linear_model import LogisticRegression
 
 app=Flask(__name__)
 
-@app.route('/')
-def first():
-  return render_template("index.html")
-
-@app.route('/r') # open the form for result predict
-def second():
-  return render_template('result.html')
-
-
-@app.route('/d')#open the form for diabetes pridiction
-def diabetes():
-  return render_template('diabetes.html')
-
-@app.route('dp',methods=["POST"])
+@app.route('/',methods=["POST"])
 def diabetesprediction():
   Age=eval(request.form.get("Age"))
   HyperTension=eval(request.form.get("HyperTension"))
@@ -45,7 +32,7 @@ def diabetesprediction():
 
   
   
-  return render_template("index.html", result2=str(arr[0]))
+  return render_template("index.html", result=str(arr[0]))
 
 if __name__ == '__main__':
   app.run()
