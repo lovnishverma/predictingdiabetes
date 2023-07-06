@@ -41,9 +41,16 @@
           </table>
           <input type="submit" value="PREDICT" />
         </form>
-        <div class="row">
-          <h2><em>{{data}}</em></h2>
-        </div>
+         <div> Result: </div>
+     <div align="center"> {{data}} </div>
+     <center>
+     {% if data==0 %}
+        <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20Setosa.png?v=1680866840563" alt="IRIS SETOSA" width="200" height="200">
+
+     {% elif data==1 %}
+        <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20Virginica.png?v=1680866857022" alt="IRIS VIRGINICA" width="200" height="200">
+     {% endif %}
+     </center>
       </div>
     </body>
   </head>

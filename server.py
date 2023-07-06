@@ -12,12 +12,12 @@ def iris():
 
 @app.route('/irisf', methods=["POST"])
 def page():
-  swidth=eval(request.form.get("n1"))
-  sheight=eval(request.form.get("n2"))
-  pwidth=eval(request.form.get("n3"))
-  pheight=eval(request.form.get("n4"))
-  height=eval(request.form.get("n5"))
-  hght=eval(request.form.get("n6"))
+#   swidth=eval(request.form.get("n1"))
+#   sheight=eval(request.form.get("n2"))
+#   pwidth=eval(request.form.get("n3"))
+#   pheight=eval(request.form.get("n4"))
+#   height=eval(request.form.get("n5"))
+#   hght=eval(request.form.get("n6"))
   
   url="te.csv"
   
@@ -31,9 +31,9 @@ def page():
   model=LogisticRegression()
   model.fit(x,y)
   
-  arr=model.predict([[swidth,sheight,pwidth,pheight,height,hght]])
+  arr=model.predict([[80,45,6,7,54,7]])
 
-  return render_template("index.html", data=str(arr[0]))
+  return render_template("index.html", data=str(0))
 
 
 if __name__ == '__main__':
