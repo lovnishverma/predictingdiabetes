@@ -12,24 +12,26 @@ def iris():
 
 @app.route('/irisf', methods=["POST"])
 def page():
-  swidth=eval(request.form.get("swidth"))
-  sheight=eval(request.form.get("sheight"))
-  pwidth=eval(request.form.get("pwidth"))
-  pheight=eval(request.form.get("pheight"))
+  swidth=eval(request.form.get("n1"))
+  sheight=eval(request.form.get("n2"))
+  pwidth=eval(request.form.get("n3"))
+  pheight=eval(request.form.get("n4"))
+  height=eval(request.form.get("n5"))
+  hght=eval(request.form.get("n6"))
   
-  url="https://raw.githubusercontent.com/sarwansingh/Python/master/ClassExamples/data/iris.csv"
+  url="te.csv"
   
   data=pd.read_csv(url, header=None)
   flower=data.values
   
   #Split
-  x=flower[:,:4]
+  x=flower[:,:7]
   y=flower[:,-1]
   
   model=LogisticRegression()
   model.fit(x,y)
   
-  arr=model.predict([[swidth,sheight,pwidth,pheight]])
+  arr=model.predict([[swidth,sheight,pwidth,pheight,height,hght]])
 
   return render_template("index.html", data=str(arr[0]))
 
