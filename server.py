@@ -3,32 +3,36 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 
+
 app=Flask(__name__)
 
-@app.route('/', methods=['POST'])
-def diabetesprediction():
-  if request.method == 'POST' :
-    age = eval(request.form['n1'])
-    ht = eval(request.form['n2'])
-    hd = eval(request.form['n3'])
-    bmi = eval(request.form['n4'])
-    hbl = eval(request.form['n5'])
-    bgl = eval(request.form['n6'])
+@app.route('/')
+def iris():
+  return render_template("index.html")
+
+@app.route('/irisf', methods=["POST"])
+def page():
+  swidth=eval(request.form.get("swidth"))
+  sheight=eval(request.form.get("sheight"))
+  pwidth=eval(request.form.get("pwidth"))
+  pheight=eval(request.form.get("pheight"))
   
-    url = "dia.csv"
-    data = pd.read_csv(url,header=None)
-    flower=data.values
+  url="https://raw.githubusercontent.com/sarwansingh/Python/master/ClassExamples/data/iris.csv"
   
-  # split the values into input and output
-    x = flower[:,7]
-    y = flower[:,7]
+  data=pd.read_csv(url, header=None)
+  flower=data.values
   
-    model = LogisticRegression()
-    model.fit(x,y)
+  #Split
+  x=flower[:,:4]
+  y=flower[:,-1]
   
-    arr = model.predict([[age,ht, hd,bmi,hbl,bgl]])
+  model=LogisticRegression()
+  model.fit(x,y)
   
-    return render_template("index.html", result=str(arr[0]))
+  arr=model.predict([[swidth,sheight,pwidth,pheight]])
+
+  return render_template("index.html", data=str(arr[0]))
+
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run()
