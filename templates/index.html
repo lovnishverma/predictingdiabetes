@@ -1,51 +1,50 @@
 <html>
   <head>
     <style>
-body {
-  background-image: url("https://cdn.glitch.global/3f77f752-07bc-49c4-a0de-c1f152ea05c5/JPML03-Diabetes-Prediction-using-Machine-Learning.jpg?v=1688579070737");
-  background-size: 100% 100%;
-}
-      
+      body {
+        background-image: url("https://cdn.glitch.global/3f77f752-07bc-49c4-a0de-c1f152ea05c5/JPML03-Diabetes-Prediction-using-Machine-Learning.jpg?v=1688579070737");
+        background-size: 100% 100%;
+      }
+    </style>
 
-</style>
-
-    <body   >
-    <title>predIction page</title>
-    <div align="center" class="main">
-        <h1 >PREDICTING DIABETES USING LEARNING</h1> <br />
+    <body>
+      <title>prediction page</title>
+      <div align="center" class="main">
+        <h1>PREDICTING DIABETES USING LEARNING</h1>
+        <br />
         <form action="/" method="POST">
-            <table>
-                <tr>
-                    <td align="right"> <strong>Age:</strong> </td>
-                    <td align="left"><input type="text" name="n1"></td>
-                </tr>
-                <tr>
-                    <td align="right"> <strong>HyperTension:</strong> </td>
-                    <td align="left"><input type="text" name="n2"></td>
-                </tr>
-                <tr>
-                    <td align="right"> <strong>Heart-Disease:</strong> </td>
-                    <td align="left"><input type="text" name="n3"></td>
-                </tr>
-                <tr>
-                    <td align="right"> <strong>Bmi:</strong> </td>
-                    <td align="left"><input type="text" name="n4"></td>
-                </tr>
-                <tr>
-                    <td align="right"> <strong>HbA1c_level:</strong> </td>
-                    <td align="left"><input type="text" name="n5"></td>
-                </tr>
-                <tr>
-                    <td align="right"> <strong>Blood_Glucose_Level:</strong> </td>
-                    <td align="left"><input type="text" name="n6"></td>
-                </tr>
-            </table>
-            <input type="submit" value="PREDICT">
+          <table>
+            <tr>
+              <td align="right"><strong>Age:</strong></td>
+              <td align="left"><input type="text" name="n1" /></td>
+            </tr>
+            <tr>
+              <td align="right"><strong>HyperTension:</strong></td>
+              <td align="left"><input type="text" name="n2" /></td>
+            </tr>
+            <tr>
+              <td align="right"><strong>Heart-Disease:</strong></td>
+              <td align="left"><input type="text" name="n3" /></td>
+            </tr>
+            <tr>
+              <td align="right"><strong>Bmi:</strong></td>
+              <td align="left"><input type="text" name="n4" /></td>
+            </tr>
+            <tr>
+              <td align="right"><strong>HbA1c_level:</strong></td>
+              <td align="left"><input type="text" name="n5" /></td>
+            </tr>
+            <tr>
+              <td align="right"><strong>Blood_Glucose_Level:</strong></td>
+              <td align="left"><input type="text" name="n6" /></td>
+            </tr>
+          </table>
+          <input type="submit" value="PREDICT" />
         </form>
         <div class="row">
-            <h2><em>{{result}}</em></h2>
+          <h2><em>{{result}}</em></h2>
         </div>
-    </div>
-</body>
+      </div>
+    </body>
   </head>
 </html>
