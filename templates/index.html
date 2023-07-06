@@ -42,17 +42,16 @@
             <input type="submit" value="PREDICT" />
         </form>
         <br>
-        <div> Result: </div>
-        <div align="center"> {{data}} </div>
-        <br>
-        {% if data == "yes" %}
-        <h1>
-          You have Diabetes
-        </h1>
-        {% elif data == "no" %}
-        <h1>
-          You Don't have Diabetes
-        </h1>
+        {% if error_message %}
+            <div>{{ error_message }}</div>
+        {% else %}
+            <div>Result: {{ data }}</div>
+            <br>
+            {% if data == "yes" %}
+                <h1>You have Diabetes</h1>
+            {% elif data == "no" %}
+                <h1>You Don't have Diabetes</h1>
+            {% endif %}
         {% endif %}
     </div>
 </body>
