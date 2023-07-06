@@ -18,7 +18,7 @@ def page():
   HbA1c_level=eval(request.form.get("n5"))
   Blood_Glucose_Level=eval(request.form.get("n6"))
   
-  url="https://raw.githubusercontent.com/Anmolpreet001/dataset/main/diabetes_prediction_dataset.csv"
+  url=""
   data=pd.read_csv(url,header=None)
   flower=data.values
   
