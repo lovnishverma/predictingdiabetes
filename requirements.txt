@@ -3,7 +3,7 @@ numpy
 pandas
 scikit-learn
 requests
-
+gunicorn
 
 
 
